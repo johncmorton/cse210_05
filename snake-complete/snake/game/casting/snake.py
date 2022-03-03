@@ -12,10 +12,10 @@ class Snake(Actor):
     Attributes:
         _points (int): The number of points the food is worth.
     """
-    def __init__(self):
+    def __init__(self, x, y):
         super().__init__()
         self._segments = []
-        self._prepare_body()
+        self._prepare_body(x, y)
 
     def get_segments(self):
         return self._segments
@@ -51,9 +51,7 @@ class Snake(Actor):
     def turn_head(self, velocity):
         self._segments[0].set_velocity(velocity)
     
-    def _prepare_body(self):
-        x = int(constants.MAX_X / 2)
-        y = int(constants.MAX_Y / 2)
+    def _prepare_body(self, x, y):
 
         for i in range(constants.SNAKE_LENGTH):
             position = Point(x - i * constants.CELL_SIZE, y)
