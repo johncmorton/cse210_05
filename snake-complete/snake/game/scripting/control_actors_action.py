@@ -52,19 +52,19 @@ class ControlActorsAction(Action):
             self._direction = DOWN
 
 
-        if self._keyboard_service.is_key_down('j') and self._direction != RIGHT:
+        if self._keyboard_service.is_key_down('j') and self._direction2 != RIGHT:
             self._direction2 = LEFT
         
         # right
-        if self._keyboard_service.is_key_down('l') and self._direction != LEFT:
+        if self._keyboard_service.is_key_down('l') and self._direction2 != LEFT:
             self._direction2 = RIGHT
         
         # up
-        if self._keyboard_service.is_key_down('i') and self._direction != DOWN:
+        if self._keyboard_service.is_key_down('i') and self._direction2 != DOWN:
             self._direction2 = UP
         
         # down
-        if self._keyboard_service.is_key_down('k') and self._direction != UP:
+        if self._keyboard_service.is_key_down('k') and self._direction2 != UP:
             self._direction2 = DOWN
         
         snake = cast.get_first_actor("snakes")
