@@ -23,7 +23,10 @@ def main():
     cast.add_actor("foods", Food())
     cast.add_actor("snakes", Snake(int(constants.MAX_X / 2), int(constants.MAX_Y / 2), constants.YELLOW, constants.GREEN))
     cast.add_actor("snakes2", Snake(int(constants.MAX_X / 4),int(constants.MAX_Y / 4), constants.PURPLE, constants.BLUE))
-    cast.add_actor("scores", Score())
+    cast.add_actor("scores", Score("Player 1"))
+    scores2 = Score("Player 2")
+    scores2.set_position(Point(constants.MAX_X - (constants.COLUMNS * 2), 0))
+    cast.add_actor("scores2", scores2)
    
     # start the game
     keyboard_service = KeyboardService()

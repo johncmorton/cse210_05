@@ -39,6 +39,7 @@ class HandleCollisionsAction(Action):
             cast (Cast): The cast of Actors in the game.
         """
         score = cast.get_first_actor("scores")
+        score2 = cast.get_first_actor("scores2")
         food = cast.get_first_actor("foods")
         snake = cast.get_first_actor("snakes")
         snake2 = cast.get_first_actor("snakes2")
@@ -49,7 +50,7 @@ class HandleCollisionsAction(Action):
         if head2.get_position().equals(food.get_position()):
             points = food.get_points()
             snake2.grow_tail(points)
-            score.add_points(points)
+            score2.add_points(points)
             food.reset()
 
         if head.get_position().equals(food.get_position()):
